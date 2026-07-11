@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<title>Happy 3 Years ❤️</title>
+			<link rel="stylesheet" href="style.css">
+	</head>
+	
+	<body>
+
+		<!-- BACKGROUND MUSIC -->
+
+		<audio id="bgMusic" loop>
+			<source src="audio/song.mp3" type="audio/mp3">
+		</audio>
+
+		<!-- FLOATING HEARTS -->
+
+		<div class="hearts"></div>
+
+		<!-- LANDING -->
+
+		<div id="landing" class="center fade">
+			<h1>Happy 3 Years ❤️</h1>
+			<p>Nduduzo & Siphetho 💖</p>
+				<button onclick="enterSite()">Enter Our World</button>
+		</div>
+
+		<!-- MAIN -->
+
+		<div id="main" style="display:none;" class="fade">
+
+			<nav>
+				<button onclick="showTab('timeline')">Timeline</button>
+				<button onclick="showTab('scrapbook')">Scrapbook</button>
+				<button onclick="showTab('game')">Game</button>
+				<button onclick="showTab('private')">Private</button>
+			</nav>
+
+		<!-- TIMELINE -->
+
+		<section id="timeline" class="tab">
+			<h2>Our Journey ❤️</h2>
+
+				```
+			<div class="card">
+				<h3>✨ The Day We Met</h3>
+				<p>Write how everything started… the moment that changed everything.</p>
+			</div>
+
+			<div class="card">
+				<h3>💫 First Date</h3>
+				<p>Describe how you felt, what made it special.</p>
+			</div>
+
+			<div class="card">
+				<h3>❤️ Favorite Memory</h3>
+				<p>Your happiest moment together.</p>
+			</div>
+			```
+
+		</section>
+
+		<!-- SCRAPBOOK -->
+
+		<section id="scrapbook" class="tab" style="display:none;">
+			<h2>Memories 📸</h2>
+
+			```
+			<div class="gallery">
+				<img src="images/photo1.jpg">
+				<img src="images/photo2.jpg">
+				<img src="images/photo3.jpg">
+			</div>
+			```
+
+		</section>
+
+		<!-- GAME -->
+
+		<section id="game" class="tab" style="display:none;">
+			<h2>How Well Do You Know Us? 🎮</h2>
+
+			```
+			<div class="card">
+				<p>Where did we meet?</p>
+					<button onclick="answer(true)">Correct Answer</button>
+					<button onclick="answer(false)">Wrong Answer</button>
+			</div>
+
+			<div class="card">
+				<p>Who said "I love you" first?</p>
+				<button onclick="answer(true)">Me 😎</button>
+				<button onclick="answer(false)">You 😏</button>
+			</div>
+
+			<button onclick="showScore()">Show Score ❤️</button>
+				```
+
+		</section>
+
+		<!-- PRIVATE -->
+
+		<section id="private" class="tab" style="display:none;">
+			<h2>Private 🔐</h2>
+
+			```
+			<input type="password" id="password" placeholder="Enter our special date">
+			<button onclick="checkPassword()">Unlock</button>
+
+			<div id="privateContent" class="card" style="display:none;">
+				<h3>My Message to You ❤️</h3>
+					<p>
+						Replace this with a deep message. Talk about how she changed your life,
+						what she means to you, and your future together.
+					</p>
+			</div>
+			```
+
+		</section>
+
+		</div>
+
+		<script src="script.js"></script>
+
+	</body>
+</html>
