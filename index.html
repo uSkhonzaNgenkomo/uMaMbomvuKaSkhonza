@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<title>Happy 3 Years ❤️</title>
+			<link rel="stylesheet" href="style.css">
+	</head>
+	
+	<body>
+
+		<!-- BACKGROUND MUSIC -->
+
+		<audio id="bgMusic" loop>
+			<source src="audio/song.mp3" type="audio/mp3">
+		</audio>
+
+		<!-- FLOATING HEARTS -->
+
+		<div class="hearts"></div>
+
+		<!-- LANDING -->
+
+		<div id="landing" class="center fade">
+			<h1>Happy 3 Years ❤️</h1>
+			<p>Nduduzo & Siphetho 💖</p>
+				<button onclick="enterSite()">Enter Our World</button>
+		</div>
+
+		<!-- MAIN -->
+
+		<div id="main" style="display:none;" class="fade">
+
+			<nav>
+				<button onclick="showTab('timeline')">Timeline</button>
+				<button onclick="showTab('scrapbook')">Scrapbook</button>
+				<button onclick="showTab('game')">Game</button>
+				
+				<!-- LOCKED TAB -->
+				<button id="privateTab" onclick="checkAccess()">Private ❤️</button>
+			</nav>
+
+		<!-- TIMELINE -->
+
+		<section id="timeline" class="tab">
+			<h2>Our Journey ❤️</h2>
+
+			<div class="card">
+				<h3>✨ The Day We Met</h3>
+				<p>Write how everything started… the moment that changed everything.</p>
+			</div>
+
+			<div class="card">
+				<h3>💫 First Date</h3>
+				<p>Describe how you felt, what made it special.</p>
+			</div>
+
+			<div class="card">
+				<h3>❤️ Favorite Memory</h3>
+				<p>Your happiest moment together.</p>
+			</div>
+
+		</section>
+
+		<!-- SCRAPBOOK -->
+
+		<section id="scrapbook" class="tab" style="display:none;">
+			<h2>Memories 📸❤️</h2>
+
+			<div class="gallery">
+				<div class="photo-card">
+					<img src="images/photo1.jpg" alt="Memory 1">
+					<p>The first picture I fell in love with❤️</p>
+				</div>
+
+				<div class="photo-card">
+					<img src="images/photo2.jpg" alt="Memory 2">
+					<p>Most used picture in 2023😂❤️</p>
+				</div>
+
+				<div class="photo-card">
+					<img src="images/photo3.jpg" alt="Memory 3">
+					<p>This is where I decided I have to work hard so you're always this happy❤️</p>
+				</div>
+			</div>
+			
+			<div class="gallery">
+				<div class="photo-card">
+					<img src="images/photo4.jpg" alt="Memory 1">
+					<p>This is definitely my wife❤️</p>
+				</div>
+
+				<div class="photo-card">
+					<img src="images/photo5.jpg" alt="Memory 2">
+					<p>Our first date bakithi😂</p>
+				</div>
+
+				<div class="photo-card">
+					<img src="images/photo6.jpg" alt="Memory 3">
+					<p>My favourite date❤️</p>
+				</div>
+			</div>
+			
+			<div class="gallery">
+				<div class="photo-card">
+					<img src="images/photo7.jpg" alt="Memory 1">
+					<p>I'll always kiss you❤️</p>
+				</div>
+
+				<div class="photo-card">
+					<img src="images/photo8.jpg" alt="Memory 2">
+					<p>I'll always hold you in my arms❤️</p>
+				</div>
+
+				<div class="photo-card">
+					<img src="images/photo9.jpg" alt="Memory 3">
+					<p>I'll always be there for you❤️</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- GAME -->
+
+		<section id="game" class="tab" style="display:none;">
+			<h2>How Well Do You Know Us? 🎮</h2>
+
+			
+			<div class="question">
+				<h3>Where did we first meet?</h3>
+  
+				<button onclick="checkAnswer(this, true)">D Block</button>
+				<button onclick="checkAnswer(this, false)">Quad</button>
+				<button onclick="checkAnswer(this, false)">O-Block</button>
+			</div>
+
+			<div class="question">
+				<p>Who said "I love you" first?</p>
+				<button onclick="checkAnswer(this, false)">Siphetho</button>
+				<button onclick="checkAnswer(this, true)">Nduduzo</button>
+			</div>
+			
+			<div class="question">
+				<p>What was our first meal together?</p>
+				<button onclick="checkAnswer(this, false)">Pedros</button>
+				<button onclick="checkAnswer(this, true)">KFC</button>
+				<button onclick="checkAnswer(this, false)">Cooked Meal</button>
+			</div>
+			
+			<div class="question">
+				<p>Who falls asleep first?</p>
+				<button onclick="checkAnswer(this, true)">Nduduzo</button>
+				<button onclick="checkAnswer(this, false)">Siphetho</button>
+			</div>
+			
+			<div class="question">
+				<p>Who is more stubborn?</p>
+				<button onclick="checkAnswer(this, false)">Nduduzo</button>
+				<button onclick="checkAnswer(this, true)">Siphetho</button>
+			</div>
+			
+			
+			
+			<div class="question">
+				<p>What nickname do I love calling you?</p>
+				<button onclick="checkAnswer(this, false)">Phe</button>
+				<button onclick="checkAnswer(this, true)">Phethozi</button>
+			</div>
+			
+			<div class="question">
+				<p>Who is the better cook?</p>
+				<button onclick="checkAnswer(this, false)">Nduduzo</button>
+				<button onclick="checkAnswer(this, true)">Siphetho</button>
+			</div>
+			
+			<div class="question">
+				<p>What I love the most about you?</p>
+				<button onclick="checkAnswer(this, false)">Looks</button>
+				<button onclick="checkAnswer(this, true)">Personality</button>
+				<button onclick="checkAnswer(this, false)">Body</button>
+			</div>
+			
+			<div class="question">
+				<p>Will you continue this journey with me forever?</p>
+				<button onclick="checkAnswer(this, true)">Yes</button>
+				<button onclick="checkAnswer(this, true)">Absolutely</button>
+				<button onclick="checkAnswer(this, true)">Always</button>
+			</div>
+
+			<button onclick="showScore()">Show Score ❤️</button>
+				
+
+		</section>
+
+		<!-- PRIVATE -->
+
+		<section id="private" class="tab" style="display:none;">
+			<h2>Private 🔐</h2>
+
+			
+			<input type="password" id="password" placeholder="Enter our special date">
+			<button onclick="checkPassword()">Unlock</button>
+
+			<div id="privateContent" class="card" style="display:none;">
+				<h3>My Message to You ❤️</h3>
+					<p>
+						Replace this with a deep message. Talk about how she changed your life,
+						what she means to you, and your future together.
+					</p>
+			</div>
+			
+
+		</section>
+
+		</div>
+
+		<script src="script.js"></script>
+
+	</body>
+</html>
