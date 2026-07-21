@@ -1,0 +1,391 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(to bottom, #ffe6eb, #fff5f7);
+  color: #333;
+  text-align: center;
+}
+
+#musicControl {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 2000;
+  transition: 0.3s;
+}
+
+#musicControl:hover {
+  transform: scale(1.1);
+}
+
+.fade {
+  animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hearts::before, .hearts::after {
+  content: "❤️ ❤️ ❤️ ❤️ ❤️";
+  position: fixed;
+  width: 100%;
+  animation: floatHearts 20s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes floatHearts {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-10vh);
+  }
+}
+
+/* SMOOTH GLOBAL FEEL */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  animation: fadeInBody 1.2s ease-in-out;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+  background: #ffccd5;
+  padding: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;      /* makes it stick when scrolling */
+  top: 0;                /* stick to top */
+  z-index: 1000;         /* stay above everything */
+
+  display: flex;         /* puts buttons in a row */
+  justify-content: center; /* center horizontally */
+  align-items: center;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+
+  gap: 15px;             /* space between buttons */
+
+  background: #ffffffcc; /* soft transparent white */
+  backdrop-filter: blur(10px); /* glass effect 🔥 */
+
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+nav button {
+  background: white;
+  color: #d6336c;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
+  font-weight: bold;
+  display: inline-block;   /* FIX: allows side-by-side */
+  box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
+}
+
+nav button.active {
+  background: #c9184a;
+}
+
+nav button:hover {
+  background: #ff8fab;
+  color: white;
+}
+
+/* LOCKED TAB */
+#privateTab.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tab {
+  display: none;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.tab.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#privateTab.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.tab {
+  display: none;
+  padding: 20px;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+.active {
+  display: block;
+}
+
+/* =========================
+   CARDS (TIMELINE + PRIVATE)
+========================= */
+.card {
+  background: white;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 15px;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* TIMELINE CARDS */
+.card, .photo-card {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.8s ease;
+}
+
+/* WHEN VISIBLE */
+.card.show, .photo-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* HOVER EFFECT (NETFLIX STYLE) */
+.photo-card:hover {
+  transform: scale(1.08);
+  z-index: 10;
+}
+
+/* IMAGE ZOOM */
+.photo-card img {
+  transition: transform 0.5s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.1);
+}
+
+/* =========================
+   GALLERY (SCRAPBOOK)
+========================= */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery .photo-card {
+  width: 200px;
+}
+
+.photo-card {
+  width: 200px;
+  text-align: center;
+  background: white;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.photo-card:hover {
+  transform: scale(1.05);
+}
+
+.photo-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.photo-card p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.photo-card.side-by-side {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1100px;
+  width: 90%;
+  margin: 30px auto;
+}
+
+/* image */
+.photo-card.side-by-side img {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* text */
+.photo-card.side-by-side p {
+  flex: 1;
+  text-align: left;
+  line-height: 1.7;
+}
+
+/* alternate layout */
+.photo-card.side-by-side:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* =========================
+   QUIZ
+========================= */
+.question {
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  margin: 8px auto;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  background: #ffccd5;
+  color: #333;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff8fab;
+  color: white;
+}
+
+.question {
+  background: white;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 12px;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* PROGRESS BAR */
+#progressBar {
+  width: 0%;
+  height: 10px;
+  background: #ff4d6d;
+  transition: width 0.4s ease;
+}
+
+#progressContainer {
+  width: 80%;
+  margin: 20px auto;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ANSWER COLORS */
+.correct {
+  background-color: #4CAF50 !important;
+  color: white;
+}
+
+.wrong {
+  background-color: #f44336 !important;
+  color: white;
+}
+
+/* =========================
+   RESULT
+========================= */
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* =========================
+   INPUT (PRIVATE TAB)
+========================= */
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+
+/* =========================
+   LANDING PAGE
+========================= */
+#landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(to bottom, #ffccd5, #ffe6eb);
+}
+
+#landing h1 {
+  font-size: 2.5em;
+  color: #d6336c;
+}
+
+#landing button {
+  background: white;
+  color: #d6336c;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#landing button:hover {
+  background: #ff8fab;
+  color: white;
+}
+
+#loveMessage::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
